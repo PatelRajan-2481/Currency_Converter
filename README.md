@@ -46,7 +46,7 @@ terraform {
   }
 }
 ```
-> You must create the bucket **before** running `terraform init`.
+> You must create the bucket and update `config.tf` for each environment **before** running `terraform init`.
 
 ---
 
@@ -97,7 +97,7 @@ ansible-playbook ansible/playbooks/install_apache.yaml
 - **networking**: VPC, subnets, IGW, route tables, NAT GW
 - **ec2**: Webservers, Bastion, DB, and other instances
 - **security**: Security groups for public and private tiers
-- **alb** (optional): Application Load Balancer configuration
+
 
 ### Environments
 - Each environment has its own:
@@ -106,7 +106,7 @@ ansible-playbook ansible/playbooks/install_apache.yaml
   - Naming conventions (`Rajan-Dev-Webserver1`, etc.)
 
 ### GitHub Actions
-- **terraform-scan.yml**: Runs `tflint`, `tfsec`, and **silent `trivy`** on pushes to `main`, `staging`, and PRs to `prod`
+- **terraform-scan.yml**: Runs `tflint`, `tfsec`, and `trivy` on pushes to `main`, `staging`, and PRs to `prod`
 - **terraform-deploy.yml**: Deploys infrastructure automatically on `prod` merge
 - Branch protection prevents direct pushes to `prod`
 
@@ -124,6 +124,9 @@ terraform destroy -auto-approve
 Clean the local workspace:
 ```bash
 rm -rf .terraform .terraform.lock.hcl
-```
-> Do **not** push `.terraform/`, `.terraform.lock.hcl`, or SSH key files (`.pem`) to GitHub
+
+
+
+
+
 
