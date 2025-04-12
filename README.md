@@ -107,7 +107,8 @@ ansible-playbook ansible/playbooks/install_apache.yaml
 
 ### GitHub Actions
 - **terraform-scan.yml**: Runs `tflint`, `tfsec`, and `trivy` on pushes to `main`, `staging`, and PRs to `prod`
-- **terraform-deploy.yml**: Deploys infrastructure automatically on `prod` merge
+- **terraform-deploy.yml**: Trigger on push to `prod`, Initializes and applies Terraform to deploy infrastructure in the `prod` branch
+- **Ansible workflow**: Executes Ansible playbook on push or manual trigger
 - Branch protection prevents direct pushes to `prod`
 
 
