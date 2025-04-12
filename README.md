@@ -72,7 +72,7 @@ terraform apply -auto-approve
 ### 📷 Upload Image to S3
 Use AWS CLI or Console to upload a static image to your private S3 bucket.
 ```bash
-aws s3 cp ./assets/index-image.png s3://acs730-rajan-dev-assets/index-image.png
+aws s3 cp ./assets/index-image.png s3://acs730-rajan-web-pictures/index-image.png
 ```
 
 ### 📦 Install Ansible 
