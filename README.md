@@ -112,7 +112,7 @@ ansible-playbook ansible/playbooks/install_apache.yaml
 
 ---
 
-## Cleanup Instructions
+## 🔚 Cleanup Instructions
 Run the following to delete infrastructure for an environment:
 ```bash
 cd environments/dev
@@ -123,9 +123,3 @@ terraform destroy -auto-approve
 Clean the local workspace:
 ```bash
 rm -rf .terraform .terraform.lock.hcl
-
-
-
-
-
-
