@@ -20,7 +20,6 @@ The architecture provisions and configures the following:
 - 6 EC2 instances across **4 public and 2 private subnets** in multiple AZs
 - NAT Gateway for internet access to private subnets
 - Bastion Host for SSH access to private VMs
-- Load Balancer (optional) and Auto Scaling Group integration (configurable)
 - Apache HTTP web servers serving static content with image loaded from **private S3 bucket**
 
 ---
